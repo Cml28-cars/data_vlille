@@ -1,7 +1,6 @@
-services:
-  - type: worker
-    name: mon-bot-vlille
-    env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: bash start.sh
+type: worker
+name: mon-bot-vlille
+env: python
+plan: free
+buildCommand: pip install -r requirements.txt
+startCommand: bash start.sh
