@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord V'Lille</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+      color: #222;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #0072ce;
+    }
+    .status {
+      font-weight: bold;
+      color: green;
+    }
+    .warning {
+      color: #e67e22;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Tableau de bord V'Lille</h1>
+
+  <div class="card">
+    <h2>📂 Dernier fichier téléchargé</h2>
+    <p id="dernier-fichier">Chargement...</p>
+  </div>
+
+  <div class="card">
+    <h2>⏱️ Dernier push GitHub</h2>
+    <p id="dernier-push">Chargement...</p>
+  </div>
+
+  <div class="card">
+    <h2>📡 Statut</h2>
+    <p class="status">✅ Bot actif</p>
+    <p class="warning">UptimeRobot doit interroger l'URL régulièrement pour le maintenir éveillé.</p>
+  </div>
+
+  <script>
+    fetch("/status.json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("dernier-fichier").textContent = data.last_file || "Aucun";
+        document.getElementById("dernier-push").textContent = data.last_push || "Aucun";
+      })
+      .catch(() => {
+        document.getElementById("dernier-fichier").textContent = "Erreur de chargement";
+        document.getElementById("dernier-push").textContent = "Erreur de chargement";
+      });
+  </script>
+</body>
+</html>

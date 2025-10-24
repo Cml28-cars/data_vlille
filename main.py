@@ -2,14 +2,12 @@ import requests
 import os
 from datetime import datetime
 import pytz
-from flask import Flask
+from flask import Flask, render_template, jsonify
 import schedule
 import threading
 import time
 import subprocess
-
-
-
+import json
 
 # Créer dossier si besoin
 os.makedirs("data", exist_ok=True)
@@ -47,6 +45,14 @@ def telecharger():
             )
     subprocess.run(["python3", "transfert_git.py"])
 
+    with open("status.json", "w") as f:
+        json.dump(
+            {
+                "last_file": fichier_sortie,
+                "last_push": heure_locale.strftime('%Y-%m-%d %H:%M:%S')
+            },
+            f)
+
 
 # Lancer la tâche une fois au démarrage
 telecharger()
@@ -64,9 +70,19 @@ def boucle_schedule():
 app = Flask(__name__)
 
 
+
 @app.route("/")
 def home():
-    return "Vlille bot actif"
+    return render_template("index.html")
+
+@app.route("/status.json")
+def status():
+    try:
+        with open("status.json", "r") as f:
+            return jsonify(json.load(f))
+    except:
+        return jsonify({"last_file": "Aucun", "last_push": "Aucun"})
+
 
 
 if __name__ == "__main__":
