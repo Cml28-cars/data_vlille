@@ -6,6 +6,7 @@ from flask import Flask
 import schedule
 import threading
 import time
+import subprocess
 
 
 
@@ -44,6 +45,7 @@ def telecharger():
             suvi.write(
                 f"[{heure_locale.strftime('%Y-%m-%d_%H-%M-%S')}] ❌ Erreur {response.status_code} sur {url}\n"
             )
+    subprocess.run(["python3", "transfert_git.py"])
 
 
 # Lancer la tâche une fois au démarrage
