@@ -8,8 +8,13 @@ from datetime import datetime
 import os
 import schedule
 import time
+import ctypes
+
 
 from transfert_git import push_to_git  # on importe la fonction depuis transfert_git.py
+
+ctypes.windll.kernel32.SetThreadExecutionState(0x80000002)
+
 
 URL = "https://data.lillemetropole.fr/data/ogcapi/collections/ilevia:vlille_temps_reel/items?f=csv&limit=-1"
 LOGFILE = "fichier_suivi.log"
