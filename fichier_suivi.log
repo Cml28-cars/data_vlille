@@ -9217,3 +9217,5 @@
 [2025-11-01_14-52-19] EXCEPTION HTTPSConnectionPool(host='data.lillemetropole.fr', port=443): Max retries exceeded with url: /data/ogcapi/collections/ilevia:vlille_temps_reel/items?f=csv&limit=-1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001CFAE3DACF0>: Failed to resolve 'data.lillemetropole.fr' ([Errno 11001] getaddrinfo failed)"))
 [2025-11-01 14:52:20] PUSH_OK vers GitHub (main)
 [2025-11-01_14-54-31] OK data\2025-11-01\2025-11-01_14-54-31.csv
+[2025-11-01 14:54:32] PUSH_OK vers GitHub (main)
+[2025-11-01_14-56-36] OK data\2025-11-01\2025-11-01_14-56-36.csv
