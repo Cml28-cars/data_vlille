@@ -39535,3 +39535,5 @@
 [2025-11-23_12-47-04] OK data\2025-11-23\2025-11-23_12-47-04.csv
 [2025-11-23 12:47:05] PUSH_OK vers GitHub (main)
 [2025-11-23_12-49-09] ERROR 500 sur https://data.lillemetropole.fr/data/ogcapi/collections/ilevia:vlille_temps_reel/items?f=csv&limit=-1
+[2025-11-23 12:49:13] PUSH_OK vers GitHub (main)
+[2025-11-23_12-51-17] OK data\2025-11-23\2025-11-23_12-51-17.csv
