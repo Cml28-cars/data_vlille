@@ -39975,3 +39975,5 @@
 [2025-11-23_20-26-19] OK data\2025-11-23\2025-11-23_20-26-19.csv
 [2025-11-23 20:26:20] PUSH_OK vers GitHub (main)
 [2025-11-23_20-28-24] OK data\2025-11-23\2025-11-23_20-28-24.csv
+[2025-11-23 20:28:25] PUSH_OK vers GitHub (main)
+[2025-11-23_20-30-29] EXCEPTION HTTPSConnectionPool(host='data.lillemetropole.fr', port=443): Max retries exceeded with url: /data/ogcapi/collections/ilevia:vlille_temps_reel/items?f=csv&limit=-1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001514B57B4D0>, 'Connection to data.lillemetropole.fr timed out. (connect timeout=None)'))
